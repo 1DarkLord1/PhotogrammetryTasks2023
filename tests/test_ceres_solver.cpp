@@ -377,7 +377,15 @@ void evaluateLineFitting(double sigma, double &fitted_inliers_fraction, double &
     }
 
     for (auto& x: line_params) {
-        x *= ideal_line[2] / line_params[2];
+        if (line_params[2] != 0) {
+            x *= ideal_line[2] / line_params[2];
+        }
+        else if (line_params[1] != 0) {
+            x *= ideal_line[1] / line_params[1];
+        }
+        else if (line_params[0] != 0) {
+            x *= ideal_line[0] / line_params[0];
+        }
     }
 
     for (int d = 0; d < 3; ++d) {
