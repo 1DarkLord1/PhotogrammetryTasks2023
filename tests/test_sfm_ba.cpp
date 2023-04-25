@@ -42,17 +42,17 @@
 // Datasets:
 
 // достаточно чтобы у вас работало на этом датасете, тестирование на Travis CI тоже ведется на нем
-//#define DATASET_DIR                  "saharov32"
-//#define DATASET_DOWNSCALE            1 // картинки уже уменьшены в 4 раза (оригинальные вы можете скачать по ссылке из saharov32/LINK.txt)
-//#define DATASET_F                    (1585.5 / DATASET_DOWNSCALE)
+#define DATASET_DIR                  "saharov32"
+#define DATASET_DOWNSCALE            1 // картинки уже уменьшены в 4 раза (оригинальные вы можете скачать по ссылке из saharov32/LINK.txt)
+#define DATASET_F                    (1585.5 / DATASET_DOWNSCALE)
 
 // но если любопытно - для экспериментов предлагаются еще дополнительные датасеты
 // скачайте их фотографии в папку data/src/datasets/DATASETNAME/ по ссылке из файла LINK.txt в папке датасета:
 
 // saharov32 и herzjesu25 - приятные датасеты, вероятно их оба получится выравнять целиком
-#define DATASET_DIR                  "herzjesu25"
-#define DATASET_DOWNSCALE            2 // для ускорения SIFT
-#define DATASET_F                    (2761.5 / DATASET_DOWNSCALE) // see herzjesu25/K.txt
+//#define DATASET_DIR                  "herzjesu25"
+//#define DATASET_DOWNSCALE            2 // для ускорения SIFT
+//#define DATASET_F                    (2761.5 / DATASET_DOWNSCALE) // see herzjesu25/K.txt
 // DONE почему фокальная длина меняется от того что мы уменьшаем картинку? почему именно в такой пропорции? может надо домножать? или делить на downscale^2 ?
 // Посмотрим на функцию проекции 3D точки на картинку. На одном из этапов координаты 2D точки домножаются на f - фокальную длину.
 // Если мы уменьшим все координаты в DATASET_DOWNSCALE раз, то расстояние от камеры до картинки (т.е. фокальное расстояние)
